@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  --color-warm-bg: #FAF6F0;
+  --color-terracotta: #8F4A35;
+  --color-terracotta-dark: #763C2A;
+  --color-terracotta-light: #A85942;
+  --color-dark-text: #3B2F2A;
+  --color-light-beige: #E4D9CB;
+  --color-soft-sand: #F3ECE1;
+  --color-subtle-muted: #7A6C65;
+
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  body {
+    background-color: var(--color-warm-bg, #FAF6F0);
+    color: var(--color-dark-text, #3B2F2A);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100dvh;
+    padding-left: env(safe-area-inset-left, 0px);
+    padding-right: env(safe-area-inset-right, 0px);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Hide scrollbar for clean horizontal scrolling (e.g. mobile category pills) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Mobile landscape orientation height adaptation */
+@media (orientation: landscape) and (max-height: 500px) {
+  .mobile-landscape-compact {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF6F0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E4D9CB;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8F4A35;
+}
